@@ -2,6 +2,7 @@
 
 - How to create an array in python
 - Singleton: from `requests` module
+- Lazy Method for Reading Big File in Python?
 
 
 ## How to create an array in python ##
@@ -41,4 +42,23 @@ class AuthManager(object):
     def __init__(self):
         self.passwd = {}
         self._auth = {}
+```
+
+
+## [Lazy Method for Reading Big File in Python?](https://stackoverflow.com/questions/519633/lazy-method-for-reading-big-file-in-python) ##
+
+```python
+def read_in_chunks(file_object, chunk_size=1024):
+    """Lazy function (generator) to read a file piece by piece.
+    Default chunk size: 1k."""
+    while True:
+        data = file_object.read(chunk_size)
+        if not data:
+            break
+        yield data
+
+
+f = open('really_big_file.dat')
+for piece in read_in_chunks(f):
+    process_data(piece)
 ```
