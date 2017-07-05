@@ -66,7 +66,7 @@ for piece in read_in_chunks(f):
 
 
 ## run only once ##
-Link: (Efficient way of having a function only execute once in a loop)[https://stackoverflow.com/questions/4103773/efficient-way-of-having-a-function-only-execute-once-in-a-loop]
+Link: [Efficient way of having a function only execute once in a loop](https://stackoverflow.com/questions/4103773/efficient-way-of-having-a-function-only-execute-once-in-a-loop)
 
 ```python
 def run_once(f):
