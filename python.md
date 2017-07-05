@@ -3,6 +3,7 @@
 - How to create an array in python
 - Singleton: from `requests` module
 - Lazy Method for Reading Big File in Python?
+- function only run once / Efficient way of having a function only execute once in a loop
 
 
 ## How to create an array in python ##
@@ -61,4 +62,23 @@ def read_in_chunks(file_object, chunk_size=1024):
 f = open('really_big_file.dat')
 for piece in read_in_chunks(f):
     process_data(piece)
+```
+
+
+## run only once ##
+Link: (Efficient way of having a function only execute once in a loop)[https://stackoverflow.com/questions/4103773/efficient-way-of-having-a-function-only-execute-once-in-a-loop]
+
+```python
+def run_once(f):
+    def wrapper(*args, **kwargs):
+        if not wrapper.has_run:
+            wrapper.has_run = True
+            return f(*args, **kwargs)
+    wrapper.has_run = False
+    return wrapper
+
+
+@run_once
+def my_function(foo, bar):
+    return foo+bar
 ```
