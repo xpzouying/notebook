@@ -17,5 +17,5 @@ for file in $1/*.dat ; do mv "$file" "${file%.*}.txt" ; done
 
     or we could execute some bash command text in vim,
     1. select the bash text in vim by `v` or select the whole line by `V`
-    2. `:` and select range `:\`<,\`>w !bash`
+    2. `:` and select range ```:`<,`>w !bash```
 
