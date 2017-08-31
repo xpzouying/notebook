@@ -19,3 +19,14 @@ for file in $1/*.dat ; do mv "$file" "${file%.*}.txt" ; done
     1. select the bash text in vim by `v` or select the whole line by `V`
     2. `:` and select range ```:`<,`>w !bash```
 
+
+## Linux
+
+- Find all ip in private network:
+    > 1. ping broadcast in subnetwork, like `192.168.1.255`
+    > 2. arp to find ip
+
+```bash
+ping 192.168.1.255
+arp -a
+```
