@@ -41,7 +41,6 @@ func TestSvrListen(t *testing.T) {
 	svr := httptest.NewServer(r)
 	defer svr.Close()
 
-	t.Logf("svr.URL: %s", svr.URL)
 	resp, err := http.Get(fmt.Sprintf("%s/hello", svr.URL))
 	if err != nil {
 		t.Fatalf("get request failed: %v", err)
@@ -54,5 +53,33 @@ func TestSvrListen(t *testing.T) {
 	}
 	if string(bytes.TrimSpace(b)) != "hello world" {
 		t.Errorf("result is not equal as expected: %s", b)
+	}
+}
+
+func TestMuxSets(t *testing.T) {
+	svr := httptest.NewServer(newHandle())
+	defer svr.Close()
+
+	for _, tc := range handleSets {
+		resp, err := http.Get(svr.URL + tc.path)
+		if err != nil {
+			t.Errorf("http get error: %v", err)
+			continue
+		}
+		defer resp.Body.Close()
+
+		if resp.StatusCode != http.StatusOK {
+			t.Errorf("http get status should be ok, but is: %d", resp.StatusCode)
+			continue
+		}
+
+		b, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			t.Errorf("read from response body error: %v", err)
+		}
+
+		if string(b) != tc.resp {
+			t.Errorf("expected: %s, but response is: %s", tc.resp, b)
+		}
 	}
 }
