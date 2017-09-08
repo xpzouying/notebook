@@ -10,7 +10,7 @@ import (
 )
 
 func TestHello(t *testing.T) {
-	req, err := http.NewRequest("GET", "localhost:8080/index", nil)
+	req, err := http.NewRequest(http.MethodGet, "localhost:8080/index", nil)
 	if err != nil {
 		t.Fatalf("could not create request: %v", err)
 	}
