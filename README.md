@@ -30,3 +30,9 @@ for file in $1/*.dat ; do mv "$file" "${file%.*}.txt" ; done
 ping 192.168.1.255
 arp -a
 ```
+
+## Programming
+
+### protobuf
+
+`protoc --go_out=. *.proto`
