@@ -1,6 +1,26 @@
 # notebook
 Notebook for Memo
 
+## git
+
+- How to sync a fork repo with remote/origin repo
+
+```bash
+# clone your fork
+git clone git@github.com:YOUR-USERNAME/YOUR-FORKED-REPO.git
+
+# Add remote from original repository in your forked repository:
+cd into/cloned/fork-repo
+git remote add upstream git://github.com/ORIGINAL-DEV-USERNAME/REPO-YOU-FORKED-FROM.git
+git fetch upstream
+
+# Updating your fork from original repo to keep up with their changes:
+git pull upstream master
+
+# rebase
+git checkout local-master
+git rebase upstream/master
+```
 
 ## bash ##
 - Rename filename in batch way
