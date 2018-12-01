@@ -56,3 +56,24 @@ arp -a
 ### protobuf
 
 `protoc --go_out=. *.proto`
+
+
+### etcdctl
+
+```bash
+# get key field with prefix
+ETCDCTL_API=3 etcdctl --endpoints=zy-dev01:2379 get --prefix service/1N
+
+# watch
+etcdctl --endpoints=zy-dev01:2379 watch --prefix service/1N
+```
+
+
+# Mac osx
+
+## brew
+
+```bash
+brew tap homebrew/cask-fonts                  # you only have to do this once!
+brew cask install font-inconsolata
+```
