@@ -22,7 +22,22 @@ git checkout local-master
 git rebase upstream/master
 ```
 
+
+
+* Use blame to pick reviewers
+
+  ```bash
+  npm install -g git-guilt
+  
+  # find blame delta for current branch
+  git guilt `git merge-base master HEAD` HEAD
+  ```
+
+
+
+
 ## bash ##
+
 - Rename filename in batch way
 
 ```bash
