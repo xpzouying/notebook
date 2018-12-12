@@ -20,6 +20,9 @@ git pull upstream master
 # rebase
 git checkout local-master
 git rebase upstream/master
+
+# fetch branch with prune
+git fetch --prune
 ```
 
 
