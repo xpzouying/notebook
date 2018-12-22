@@ -58,6 +58,17 @@ for file in $1/*.dat ; do mv "$file" "${file%.*}.txt" ; done
     2. `:` and select range ```:`<,`>w !bash```
 
 
+## Docker
+
+- run with auto remove
+
+  ```bash
+  docker run -t -d --rm --name ac_service -p 8080:8080 zouying:ac
+  ```
+
+
+
+
 ## Linux
 
 - Find all ip in private network:
