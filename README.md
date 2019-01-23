@@ -27,6 +27,16 @@ git fetch --prune
 
 
 
+* [discard all changes and pull from upstream](https://stackoverflow.com/questions/13781388/git-discard-all-changes-and-pull-from-upstream)
+
+  ```bash
+  git reset --hard origin/master
+  ```
+
+  
+
+
+
 * [How to prune local tracking branches that do not exist on remote anymore](https://stackoverflow.com/questions/13064613/how-to-prune-local-tracking-branches-that-do-not-exist-on-remote-anymore)
 
 ```bash
